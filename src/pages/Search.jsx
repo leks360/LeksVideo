@@ -18,7 +18,7 @@ export default function Search(props) {
         const fet=async()=>{
             console.log("calling");
             try{
-            const res=await axiosInstance.get(`video/search${query}`,{withCredentials: true, credentials: 'include'});
+            const res=await axiosInstance.get(`/video/search${query}`,{withCredentials: true, credentials: 'include'});
             setVideos(res.data);
             }catch(er){
                 console.log(er.message);

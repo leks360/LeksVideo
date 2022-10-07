@@ -161,23 +161,23 @@ export default function Video(props) {
         <Container>
             <Content>
                 <VideoWrapper>
-                    <VideoFrame src={currentVideo.videoUrl} controls>
+                    <VideoFrame src={currentVideo?.videoUrl} controls>
 
                     </VideoFrame>
                 </VideoWrapper>
-                <Title>{currentVideo.title}</Title>
+                <Title>{currentVideo?.title}</Title>
                 <Details>
-                    <Info>{currentVideo.views} views {format(currentVideo.createdAt)} </Info>
+                    <Info>{currentVideo?.views} views {format(currentVideo?.createdAt)} </Info>
                     <Buttons>
                         <Button onClick={handleLike}>
-                        {currentVideo.likes?.includes(currentUser?._id)?
+                        {currentVideo?.likes?.includes(currentUser?._id)?
                             (<ThumbUpIcon/>):(<ThumbUpOutlinedIcon/>)}{" "}
-                            {currentVideo.likes?.length}
+                            {currentVideo?.likes?.length}
                             </Button>
                         <Button onClick={handleDislike}>
-                        {currentVideo.dislikes?.includes(currentUser?._id)?
+                        {currentVideo?.dislikes?.includes(currentUser?._id)?
                             ( <ThumbDownIcon/>):(<ThumbDownOutlinedIcon/>)}{" "}
-                            {currentVideo.dislikes?.length}
+                            {currentVideo?.dislikes?.length}
                            
                             </Button>
 
@@ -193,13 +193,13 @@ export default function Video(props) {
                                 {channel.name}
                             </ChannelName>
                             <ChannelCounter>{channel.subsribers} subscribers</ChannelCounter>
-                            <ChannelDecs>{currentVideo.decs}</ChannelDecs>
+                            <ChannelDecs>{currentVideo?.decs}</ChannelDecs>
                         </ChannelDetail>
                     </ChannelInfo>
                     <SubscribeBtn onClick={handlesub}>{currentUser?.subscribedUsers?.includes(channel._id)?"Unsub":"Sub"}</SubscribeBtn>
                 </Channel>
                 <Hr/>
-                <Comments videoId={currentVideo._id}/>
+                <Comments videoId={currentVideo?._id}/>
                 
             </Content>
             <Recom>
